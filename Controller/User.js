@@ -48,11 +48,12 @@ exports.UserLogin = async function (req, res, next) {
 
 }
 
-exports.UserLogin = async function (req, res, next) {
+exports.UserFind = async function (req, res, next) {
   try {
 
     let userFind = await User.find()
-
+    console.log(userFind);
+    
 
     res.status(200).json({
       status: "Success",
