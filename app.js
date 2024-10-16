@@ -8,7 +8,7 @@ var cors = require('cors')
 require('dotenv').config()
 
 var mongoose = require("mongoose")
-mongoose.connect(`${process.env.DB_URL}famillerDB`)
+mongoose.connect(`${process.env.DB_URL}salonDB`)
 
 // mongoose.connect('mongodb://127.0.0.1:27017/salonDB')
   .then(() => console.log('Connected!'))
