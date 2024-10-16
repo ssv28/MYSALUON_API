@@ -74,7 +74,7 @@ exports.UserFind = async function (req, res, next) {
 exports.UserDelete = async function (req, res, next) {
   try {
 
-    await User.findById(req.params.id)
+    await User.findByIdAndDelete(req.params.id)
 
     // console.log(userDelete);
     
@@ -98,7 +98,7 @@ exports.UserUpdate = async function (req, res, next) {
   try {
     
     req.body.password = await bcrypt.hash(req.body.password, 10)
-    let userUpdate = await User.create(req.body)
+    let userUpdate = await CATEGORY.findByIdAndUpdate(req.params.id, req.body, { new: true })
 
     res.status(200).json({
       status: "Success",
