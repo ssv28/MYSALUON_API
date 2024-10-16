@@ -14,4 +14,7 @@ router.post('/login', UserController.UserLogin);
 //All USER
 router.get('/all', UserController.UserFind);
 
+//USER DELETE
+router.delete('/delete/:id', UserController.UserDelete);
+
 module.exports = router;

@@ -70,3 +70,25 @@ exports.UserFind = async function (req, res, next) {
   }
 
 }
+
+exports.UserDelete = async function (req, res, next) {
+  try {
+
+    await User.findByIdAndDelete()
+    console.log(userDelete);
+    
+
+    res.status(200).json({
+      status: "Success",
+      message: "User Delete SuccessFully!",
+
+    })
+
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: error.message
+    })
+  }
+
+}
