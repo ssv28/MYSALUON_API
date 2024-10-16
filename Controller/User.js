@@ -74,7 +74,8 @@ exports.UserFind = async function (req, res, next) {
 exports.UserDelete = async function (req, res, next) {
   try {
 
-    await User.findByIdAndDelete()
+    let userDelete = await User.findById(req.params.id)
+
     console.log(userDelete);
     
 
