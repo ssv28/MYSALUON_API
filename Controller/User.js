@@ -52,7 +52,7 @@ exports.UserFind = async function (req, res, next) {
   try {
 
     let userFind = await User.find()
-    console.log(userFind);
+    // console.log(userFind);
     
 
     res.status(200).json({
