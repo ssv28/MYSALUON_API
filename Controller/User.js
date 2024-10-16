@@ -92,3 +92,24 @@ exports.UserDelete = async function (req, res, next) {
   }
 
 }
+
+exports.UserUpdate = async function (req, res, next) {
+  try {
+    
+    req.body.password = await bcrypt.hash(req.body.password, 10)
+    let userUpdate = await User.create(req.body)
+
+    res.status(200).json({
+      status: "Success",
+      message: "User Update SuccessFully!",
+      data : userUpdate
+    })
+
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: error.message
+    })
+  }
+
+}
